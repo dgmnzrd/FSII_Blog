@@ -1,0 +1,11 @@
+<!-- plantillas/detalle_publicacion.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="entrada-publicacion">
+    <h2>{{ publicacion.titulo }}</h2>
+    <p>{{ publicacion.contenido }}</p>
+    <a href="{% url 'editar_publicacion' pk=publicacion.pk %}" class="btn-primary">Editar esta publicación</a>
+    <a href="{% url 'inicio' %}" class="btn-secondary">Volver al listado</a>
+</div>
+{% endblock %}

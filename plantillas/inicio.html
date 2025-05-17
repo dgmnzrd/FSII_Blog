@@ -1,0 +1,12 @@
+<!-- plantillas/inicio.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+{% for pub in publicaciones %}
+<div class="post-entry">
+    <h2><a href="{{ pub.get_absolute_url }}">{{ pub.titulo }}</a></h2>
+    <p>Autor: {{ pub.autor }}</p>
+    <p>{{ pub.contenido }}</p>
+</div>
+{% endfor %}
+{% endblock content %}

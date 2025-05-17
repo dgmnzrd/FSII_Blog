@@ -1,0 +1,216 @@
+/* base.css */
+
+/* 1. Variables de la paleta */
+:root {
+    --night:      #0D0A0B;
+    --charcoal:   #454955;
+    --magnolia:   #F3EFF5;
+    --apple:      #72B01D;
+    --office:     #3F7D20;
+
+    --text:       var(--night);
+    --bg:         var(--magnolia);
+    --header-bg:  var(--charcoal);
+    --accent:     var(--apple);
+    --button-bg:  var(--office);
+}
+
+/* 2. Reset y tipografía */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+    padding: 1rem;
+}
+
+/* 3. Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-bg);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+header h1 a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.nav-right a {
+    color: var(--bg);
+    background-color: var(--button-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: background-color .2s;
+}
+
+.nav-right a:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+/* 4. Entradas del blog */
+.post-entry {
+    background-color: var(--bg);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--accent);
+}
+
+.post-entry h2 a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.post-entry h2 a:hover {
+    color: var(--button-bg);
+}
+
+.post-entry p {
+    margin-top: 0.5rem;
+}
+
+/* 5. Formularios (crear / editar) */
+form {
+    background-color: var(--bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+form input[type="text"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--button-bg);
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+form textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+/* 6. Detalle de publicación */
+.entrada-publicacion {
+    background-color: var(--bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.entrada-publicacion h2 {
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+/* 7. Botones y enlaces internos mejorados */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    padding: 0 1.2rem;
+    line-height: 1;
+    background-color: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--button-bg);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    padding: 0 1.2rem;
+    line-height: 1;
+    background-color: var(--header-bg);
+    color: var(--bg);
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+/* 8. Separación entre acciones en formularios */
+.form-actions > * {
+    margin-right: 0.5rem;
+}
+
+/* 9. Ajustes de títulos */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+/* 10. Estilos para .btn y .btn-success (nueva publicación) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    padding: 0 1.2rem;
+    line-height: 1;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    border-radius: 0.25rem;
+}
+
+.btn-success {
+    background-color: var(--accent);
+    color: var(--bg);
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: var(--button-bg);
+}
