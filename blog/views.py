@@ -1,5 +1,6 @@
 from django.views.generic import ListView, DetailView # type: ignore
-from django.views.generic.edit import CreateView, UpdateView # type: ignore
+from django.views.generic.edit import CreateView, UpdateView, DeleteView # type: ignore
+from django.urls import reverse_lazy # type: ignore
 from .models import Publicacion
 
 # Create your views here.
@@ -21,6 +22,11 @@ class VistaEditarPublicacion(UpdateView):
     model = Publicacion
     template_name = 'editar_publicacion.html'
     fields = ['titulo', 'autor', 'contenido']
+    
+class VistaEliminarPublicacion(DeleteView):
+    model = Publicacion
+    template_name = 'eliminar_publicacion.html'
+    success_url = reverse_lazy('inicio')
 
 # def lista_publicacion(request):
 #     publicaciones = Publicacion.objects.all()

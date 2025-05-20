@@ -20,4 +20,5 @@ from django.urls import path, include # type: ignore
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
+    path('usuarios/', include('django.contrib.auth.urls')),
 ]
