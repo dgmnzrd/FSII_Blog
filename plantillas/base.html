@@ -21,9 +21,18 @@
             </div>        
         </header>
     </div>
+    {% if user.is_authenticated %}
+    <p>Hola {{ user.username }}</p>
+    <form action="{% url 'logout' %}" method="post">{% csrf_token %}
+        <button type="submit">Salir</button>
+    </form>
+    {% else %}
+    <p>No ha ingresado</p>
+    <a href="{% url 'login' %}">Acceder</a>
+    {% endif  %}
     <div>
         {% block content %}
-        {% endblock content%}
+        {% endblock content %}
     </div>
 </body>
 </html>
